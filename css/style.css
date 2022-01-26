@@ -118,13 +118,16 @@ section>div>div:first-child {
 }
 
 .item button {
-    background-color: red;
-    width: 29px;
+    display: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
 }
 
 .item ion-icon {
     /* display: none; */
-    border: 2px solid blue;
     color: #32B72F;
 }
 
