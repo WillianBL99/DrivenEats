@@ -52,7 +52,7 @@ main{
 section {
     overflow: hidden;
     
-    margin-top: 20px;    
+    margin-top: 20px;   
 }
 
 section h2 {
@@ -96,7 +96,7 @@ section>div>div:first-child {
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
 
-    margin-top: 7px;
+    margin: 10px 0;
 
     color: #A6A6A6;
 }
