@@ -118,3 +118,23 @@ function popup(state){
         document.querySelector('.background').style.display = "none";
     }
 }
+
+/* Envia mensagem whatsapp */
+
+function sendMensage(){
+    //%0d %20
+    let optFood = "Frango";
+    let optDrink = "CocaCola";
+    let optDissert = "Mussi de maracujá";
+    let total = "R$ 27,93";
+
+    let text = "Olá, gostaria de fazer o pedido:";
+    text += "\n- Prato: " + optFood;
+    text += "\n- Bebida: " + optDrink;
+    text += "\n- Sobremesa: " + optDissert;
+    text += "\nTotal: " + total;
+
+    text = window.encodeURIComponent(text);
+
+    window.open('https://wa.me/5573998573119?text=' + text + '_blank' , '_self');
+}
