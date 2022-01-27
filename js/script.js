@@ -1,7 +1,15 @@
+window.onload = function(){
+    initialState();
+}
 
 let food_opt = "";
 let drink_opt = "";
 let dessert_opt = "";
+
+function initialState(){    
+    document.getElementById('btn_next_step').disabled = true;
+    alert('chamou');
+}
 
 
 /* food selection */
@@ -87,11 +95,29 @@ function select_dessert(dessert){
     btn_active();
 }
 
-function btn_active(){
+function btn_active(){    
     var btn = document.getElementById('btn_next_step');
 
     if(food_opt != "" && drink_opt != "" && dessert_opt != ""){
         btn.style.backgroundColor = "#32B72F";
+        btn.disabled = false;        
     } 
-    else btn.style.backgroundColor = "#CBCBCB";
+    else{
+        btn.style.backgroundColor = "#CBCBCB";
+        btn.disabled = true;
+    } 
+}
+
+function closerOrder(){
+    alert('foi');
+}
+
+function popup(state){
+    const btnNext = document.getElementById('btn_next_step');
+    if(state){
+        btnNext.style.display = "flex";
+        
+    } else {
+        btnNext.style.display = "none";
+    }
 }

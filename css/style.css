@@ -170,7 +170,7 @@ button p {
 /* Popup */
 
 .background {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 
