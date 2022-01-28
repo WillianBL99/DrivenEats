@@ -170,7 +170,7 @@ button p {
 /* Popup */
 
 .background {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -260,3 +260,8 @@ button p {
 }
 
 
+/* Esconder elemento */
+
+.hide {
+    display: none;
+}

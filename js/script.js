@@ -106,17 +106,9 @@ function btn_active(){
     } 
 }
 
-function closerOrder(){
-    popup(true);
-}
-
-function popup(state){
-    if(state){
-        document.querySelector('.background').style.display = "flex";
-        
-    } else {
-        document.querySelector('.background').style.display = "none";
-    }
+function popup(){
+    const confirmOrder = document.querySelector('.background');
+    confirmOrder.classList.toggle('hide');
 }
 
 /* Envia mensagem whatsapp */
