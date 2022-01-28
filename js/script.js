@@ -26,7 +26,7 @@ function select_food(food){
         food.classList.add('selected');
         food.style.padding = "11px";
         food.querySelector('button').classList.add('selected_button');
-        food_opt = food;
+        food_opt = food;        
     }
     
     else {
@@ -110,6 +110,35 @@ function btn_active(){
 
 function popup(){
     const confirmOrder = document.querySelector('.background');
+
+    const foodName = confirmOrder.querySelector('div>div:nth-child(2)>p:nth-child(1)');
+    const foodPrice = confirmOrder.querySelector('div>div:nth-child(2)>p:nth-child(2)');
+
+    const drinkName = confirmOrder.querySelector('div>div:nth-child(3)>p:nth-child(1)');
+    const drinkPrice = confirmOrder.querySelector('div>div:nth-child(3)>p:nth-child(2)');
+
+    const dessertName = confirmOrder.querySelector('div>div:nth-child(4)>p:nth-child(1)');
+    const dessertPrice = confirmOrder.querySelector('div>div:nth-child(4)>p:nth-child(2)');
+
+    
+    foodName.innerHTML = food_opt.querySelector('strong').innerHTML;
+    foodPrice.innerHTML = food_opt.querySelector('.valor > span').innerHTML;
+    
+    drinkName.innerHTML = drink_opt.querySelector('strong').innerHTML;
+    drinkPrice.innerHTML = drink_opt.querySelector('.valor > span').innerHTML;
+    
+    dessertName.innerHTML = dessert_opt.querySelector('strong').innerHTML;
+    dessertPrice.innerHTML = dessert_opt.querySelector('.valor > span').innerHTML;
+
+    const val1 = parseFloat(foodPrice.innerHTML.replace(/,/,"."));
+    const val2 = parseFloat(drinkPrice.innerHTML.replace(/,/,"."));
+    const val3 = parseFloat(dessertPrice.innerHTML.replace(/,/,"."));
+    
+    const valTot = (val1 + val2 + val3).toFixed(2);
+
+    const total = confirmOrder.querySelector('div>div>strong:nth-child(2)');
+    total.innerHTML = `R$ ${valTot}`;
+    
     confirmOrder.classList.toggle('hide');
 }
 
@@ -120,22 +149,24 @@ function sendMensage(){
     const txtHeader = "Por favor preencha as seguintes informações:\n";
     const name = prompt(txtHeader + 'nome:')
     const address = prompt(txtHeader + 'endereco:')
-
-    let optFood = "Frango";
+    
+    let optFood = "";
     let optDrink = "CocaCola";
     let optDessert = "Mussi de maracujá";
     let total = "R$ 27,93";
 
     // montagem da mensagem
     let text = "Olá, gostaria de fazer o pedido:";
-    text += "\n- Prato: " + optFood;
-    text += "\n- Bebida: " + optDrink;
-    text += "\n- Sobremesa: " + optDessert;
-    text += "\nTotal: " + total;
-    text += "\n\nNome: " + name;
-    text += "\nEndereço: " + address;
+    text += `\n- Prato: ${optFood}`;
+    text += `\n- Bebida: ${optDrink}`;
+    text += `\n- Sobremesa: ${optDessert}`;
+    text += `\nTotal: ${total}`;
+    text += `\n\nNome: ${name}`;
+    text += `\nEndereço: ${address}`;
+
     // Converte mensagem para url
     text = window.encodeURIComponent(text);
+
     // Abre link na mesma tela
-    window.open('https://wa.me/5573998573119?text=' + text , '_self');
+    window.open(`https://wa.me/5573998573119?text=${text}`);
 }
