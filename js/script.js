@@ -122,19 +122,26 @@ function popup(state){
 /* Envia mensagem whatsapp */
 
 function sendMensage(){
-    //%0d %20
+    // Recebe nome e endreço do usuário
+    const txtHeader = "Por favor preencha as seguintes informações:\n";
+    const name = prompt(txtHeader + 'nome:')
+    const address = prompt(txtHeader + 'endereco:')
+
     let optFood = "Frango";
     let optDrink = "CocaCola";
     let optDissert = "Mussi de maracujá";
     let total = "R$ 27,93";
 
+    // montagem da mensagem
     let text = "Olá, gostaria de fazer o pedido:";
     text += "\n- Prato: " + optFood;
     text += "\n- Bebida: " + optDrink;
     text += "\n- Sobremesa: " + optDissert;
     text += "\nTotal: " + total;
-
+    text += "\n\nNome: " + name;
+    text += "\nEndereço: " + address;
+    // Converte mensagem para url
     text = window.encodeURIComponent(text);
-
-    window.open('https://wa.me/5573998573119?text=' + text + '_blank' , '_self');
+    // Abre link na mesma tela
+    window.open('https://wa.me/5573998573119?text=' + text , '_self');
 }
