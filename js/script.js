@@ -3,7 +3,7 @@ window.onload = function(){
 }
 
 function initialState(){    
-    document.getElementById('btn_next_step').disabled = true;
+    document.querySelector('footer button').disabled = true;
 }
 
 let food_opt = "";
@@ -13,95 +13,97 @@ let dessert_opt = "";
 /* food selection */
 function select_food(food){
     
-    var tag_div = document.querySelector('#food');
-    var tag_div_item = tag_div.querySelectorAll('.item');
+    const foods = document.querySelectorAll('#food .item');
+    const btnFood = document.querySelectorAll('#food button');
     
-    for(var i=0; i<tag_div_item.length; i++){
-        tag_div_item[i].style.padding = "14px";
-        tag_div_item[i].style.border = "0 solid black";
-        var btn = tag_div_item[i].querySelector('div button');
-        btn.style.display = "none";
+    for(i = 0; i < foods.length; i++){
+        foods[i].classList.remove('selected');
+        foods[i].style.padding = "14px";
+        btnFood[i].classList.remove('selected_button');
     }
 
     if(food_opt != food){
-        food.style.border = "3px solid #32B72F";
+        food.classList.add('selected');
         food.style.padding = "11px";
-
-        food.querySelector('div button').style.display = "block";
+        food.querySelector('button').classList.add('selected_button');
         food_opt = food;
     }
     
     else {
         food_opt = "";
-        food.querySelector('div button').style.display = "none";
+       // food.querySelector('div button').style.display = "none";
     }   
+
     btn_active();
 }
 
 /* drink selection */
 function select_drink(drink){
-    var tag_div = document.querySelector('#drink');
-    var tag_div_item = tag_div.querySelectorAll('.item');
     
-    for(var i=0; i<tag_div_item.length; i++){
-        tag_div_item[i].style.padding = "14px";
-        tag_div_item[i].style.border = "0 solid black";
-        var btn = tag_div_item[i].querySelector('div button');
-        btn.style.display = "none";
+    const drinks = document.querySelectorAll('#drink .item');
+    const btnDrink = document.querySelectorAll('#drink button');
+    
+    for(i = 0; i < drinks.length; i++){
+        drinks[i].classList.remove('selected');
+        drinks[i].style.padding = "14px";
+        btnDrink[i].classList.remove('selected_button');
     }
-
+    
     if(drink_opt != drink){
-        drink.style.border = "3px solid #32B72F";
+        drink.classList.add('selected');
         drink.style.padding = "11px";
-
-        drink.querySelector('div button').style.display = "block";
+        drink.querySelector('button').classList.add('selected_button');
         drink_opt = drink;
     }
     
     else {
         drink_opt = "";
-        drink.querySelector('div button').style.display = "none";
+       // drink.querySelector('div button').style.display = "none";
     }   
+
     btn_active();
 }
 
 /* dessert selection */
 function select_dessert(dessert){
     
-    var tag_div = document.querySelector('#dessert');
-    var tag_div_item = tag_div.querySelectorAll('.item');
+    const desserts = document.querySelectorAll('#dessert .item');
+    const btnDessert = document.querySelectorAll('#dessert button');
     
-    for(var i=0; i<tag_div_item.length; i++){
-        tag_div_item[i].style.padding = "14px";
-        tag_div_item[i].style.border = "0 solid black";
-        var btn = tag_div_item[i].querySelector('div button');
-        btn.style.display = "none";
+    for(i = 0; i < desserts.length; i++){
+        desserts[i].classList.remove('selected');
+        desserts[i].style.padding = "14px";
+        btnDessert[i].classList.remove('selected_button');
     }
-
+    
     if(dessert_opt != dessert){
-        dessert.style.border = "3px solid #32B72F";
+        dessert.classList.add('selected');
         dessert.style.padding = "11px";
-
-        dessert.querySelector('div button').style.display = "block";
+        dessert.querySelector('button').classList.add('selected_button');
         dessert_opt = dessert;
     }
     
     else {
         dessert_opt = "";
-        dessert.querySelector('div button').style.display = "none";
+       // dessert.querySelector('div button').style.display = "none";
     }   
+
     btn_active();
 }
 
+
+
+
+// ativa/destiva botão de fechar pedido
 function btn_active(){    
-    var btn = document.getElementById('btn_next_step');
+    const btn = document.querySelector('footer button');
 
     if(food_opt != "" && drink_opt != "" && dessert_opt != ""){
-        btn.style.backgroundColor = "#32B72F";
+        btn.classList.add('closeOrder');
         btn.disabled = false;        
     } 
     else{
-        btn.style.backgroundColor = "#CBCBCB";
+        btn.classList.remove('closeOrder');
         btn.disabled = true;
     } 
 }
@@ -121,14 +123,14 @@ function sendMensage(){
 
     let optFood = "Frango";
     let optDrink = "CocaCola";
-    let optDissert = "Mussi de maracujá";
+    let optDessert = "Mussi de maracujá";
     let total = "R$ 27,93";
 
     // montagem da mensagem
     let text = "Olá, gostaria de fazer o pedido:";
     text += "\n- Prato: " + optFood;
     text += "\n- Bebida: " + optDrink;
-    text += "\n- Sobremesa: " + optDissert;
+    text += "\n- Sobremesa: " + optDessert;
     text += "\nTotal: " + total;
     text += "\n\nNome: " + name;
     text += "\nEndereço: " + address;

@@ -265,3 +265,16 @@ button p {
 .hide {
     display: none;
 }
+
+.selected {
+    padding: 0px;
+    border: 3px solid #32B72F;
+}
+
+.selected_button {
+    display: block;
+}
+
+.closeOrder {
+    background-color: #32B72F;
+}
