@@ -134,7 +134,7 @@ function popup(){
     const val2 = parseFloat(drinkPrice.innerHTML.replace(/,/,"."));
     const val3 = parseFloat(dessertPrice.innerHTML.replace(/,/,"."));
     
-    const valTot = (val1 + val2 + val3).toFixed(2);
+    const valTot = (val1 + val2 + val3).toFixed(2).replace(/\./, ",");
 
     const total = confirmOrder.querySelector('div>div>strong:nth-child(2)');
     total.innerHTML = `R$ ${valTot}`;

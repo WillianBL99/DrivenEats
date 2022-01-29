@@ -89,6 +89,8 @@ section>div>div:first-child {
     width: 144px;
     height: 87px;
     border-radius: 4px;
+
+    siz: cover;
 }
 
 .item strong {
