@@ -180,7 +180,8 @@
         </button>
     </footer>
     <div class="background hide">
-        <div>
+        <!-- popup confirmar pedido -->
+        <div class="confirmOrder">
             <h2>Confirme seu pedido</h2>
             <div><p></p><p></p></div>
             <div><p></p><p></p></div>
@@ -189,10 +190,19 @@
                 <strong>Total</strong>
                 <strong></strong>
             </div>
-            <button class="confirm" onclick="sendMensage()">Tudo certo, pode pedir!</button>
+            <button class="confirm" onclick=" order_data()">Tudo certo, pode pedir!</button>
             <button class="cancel" onclick="popup()">Cancelar</button>
         </div>
+        <!-- popup nome endereço -->
+        <div class="personData hide">
+            <h2>Informações pessoais</h2>
+            <input class="name" type="text" placeholder="Seu nome">
+            <input class="address" type="text" placeholder="Seu endereco">
+            <button class="confirm" onclick="sendMensage()">Belezinha, agora vai!</button>
+            <button class="cancel" onclick=" order_data()">Cancelar</button>
+        </div>
     </div>
+    
     <!-- Icons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

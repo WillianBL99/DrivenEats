@@ -90,13 +90,20 @@ function popup(){
     confirmOrder.classList.toggle('hide');
 }
 
+// alterna entra tela de confirmar pedido e dados pessoais
+function order_data(){
+    document.querySelector('.confirmOrder').classList.toggle('hide');
+    document.querySelector('.personData').classList.toggle('hide');
+}
+
 /* Envia mensagem whatsapp */
 
 function sendMensage(){
     // Recebe nome e endreço do usuário
     const txtHeader = "Por favor preencha as seguintes informações:\n";
-    const name = prompt(txtHeader + 'nome:')
-    const address = prompt(txtHeader + 'endereco:')
+
+    const name = document.querySelector('.personData .name').value;
+    const address = document.querySelector('.personData .address').value;
 
     // montagem da mensagem
     let text = "Olá, gostaria de fazer o pedido:";
