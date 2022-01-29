@@ -24,11 +24,11 @@
     </header>
     <main>
         <!-- Pratos -->
-        <section  class="pratos" data-identifier="dishes">
+        <section data-identifier="dishes">
             <h2>Primeiro, seu prato</h2>
             <div id="food">
                 <!-- Prato -->
-                <div class="item prato" onclick="select_food(this)" data-identifier="food-option">
+                <div class="item prato" onclick="selectFood(this, 'food')" data-identifier="food-option">
                     <img src="./img/acarajé.jpg" alt="">
                     <strong data-identifier="food-title">Acarajé</strong>
                     <p>Completo, com pimenta</p>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <!-- Prato -->
-                <div class="item prato" onclick="select_food(this)" data-identifier="food-option">
+                <div class="item prato" onclick="selectFood(this, 'food')" data-identifier="food-option">
                     <img src="./img/hamburguer.jpg" alt="">
                     <strong data-identifier="food-title">Hambúrguer</strong>
                     <p>Dobro de carne e bacon</p>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                  <!-- Prato -->
-                 <div class="item prato" onclick="select_food(this)" data-identifier="food-option">
+                 <div class="item prato" onclick="selectFood(this, 'food')" data-identifier="food-option">
                     <img src="./img/pizza.jpg" alt="">
                     <strong data-identifier="food-title">Pizza</strong>
                     <p>Tamanho família, 12 fatias até 4 sabores</p>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <!-- Prato -->
-                <div class="item prato" onclick="select_food(this)" data-identifier="food-option">
+                <div class="item prato" onclick="selectFood(this, 'food')" data-identifier="food-option">
                     <img src="./img/panqueca.jpg" alt="">
                     <strong data-identifier="food-title">Paqueca</strong>
                     <p>6 tipos de recheios e varios molhos</p>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <!-- Prato -->
-                <div class="item prato" onclick="select_food(this)" data-identifier="food-option">
+                <div class="item prato" onclick="selectFood(this, 'food')" data-identifier="food-option">
                     <img src="./img/frango.jpg" alt="">
                     <strong data-identifier="food-title">Frango frito</strong>
                     <p>Acompanha molhoes epeciais</p>
@@ -80,11 +80,11 @@
             </div>
         </section>
         <!-- Bebidas -->
-        <section  class="bebidas" data-identifier="drinks">
+        <section data-identifier="drinks">
             <h2>Agora, sua bebida</h2>
             <div id="drink">
                 <!-- bebida-->
-                <div class="item bebida " onclick="select_drink(this)" data-identifier="food-option">
+                <div class="item bebida " onclick="selectFood(this, 'drink')" data-identifier="food-option">
                     <img src="./img/suco_laranja.jpg" alt="">
                     <strong data-identifier="food-title">Suco de laranja</strong>
                     <p>Suco das melhores frutas</p>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <!-- bebida-->
-                <div class="item bebida " onclick="select_drink(this)" data-identifier="food-option">
+                <div class="item bebida " onclick="selectFood(this, 'drink')" data-identifier="food-option">
                     <img src="./img/cocacola_cafe.jpg" alt="">
                     <strong data-identifier="food-title">CocaCola café</strong>
                     <p>Agora com ainda mais cafeína</p>
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <!-- bebida-->
-                <div class="item bebida " onclick="select_drink(this)" data-identifier="food-option">
+                <div class="item bebida " onclick="selectFood(this, 'drink')" data-identifier="food-option">
                     <img src="./img/limonada.jpg" alt="">
                     <strong data-identifier="food-title">Limonada Suíça</strong>
                     <p>Perfeita para refrescar sua vida</p>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <!-- bebida-->
-                <div class="item bebida " onclick="select_drink(this)" data-identifier="food-option">
+                <div class="item bebida " onclick="selectFood(this, 'drink')" data-identifier="food-option">
                     <img src="./img/cafe_espresso.jpg" alt="">
                     <strong data-identifier="food-title">Café Espresso</strong>
                     <p>Chega tão rapido que ainda estará quente</p>
@@ -127,11 +127,11 @@
         </section>
 
         <!-- Sobremesas -->
-        <section  class="sobremesas" data-identifier="desserts">
+        <section data-identifier="desserts">
             <h2>Por fim, sua sobremesa</h2>
             <div id="dessert">
                 <!-- sobremesa -->
-                <div class="item sobrem " onclick="select_dessert(this)" data-identifier="food-option">
+                <div class="item sobrem " onclick="selectFood(this, 'dessert')" data-identifier="food-option">
                     <img src="./img/mussi_maracuja.png" alt="">
                     <strong data-identifier="food-title">Mussi de Maracujá</strong>
                     <p>Com opções de acompanhamento</p>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <!-- sobremesa -->
-                <div class="item sobrem " onclick="select_dessert(this)" data-identifier="food-option">
+                <div class="item sobrem " onclick="selectFood(this, 'dessert')" data-identifier="food-option">
                     <img src="./img/bolo_chocolate.png" alt="">
                     <strong data-identifier="food-title">Bolo de chocolate</strong>
                     <p>Cobertura com bastante chocolate</p>
@@ -151,7 +151,7 @@
                     </div>
                 </div>
                 <!-- sobremesa -->
-                <div class="item sobrem " onclick="select_dessert(this)" data-identifier="food-option">
+                <div class="item sobrem " onclick="selectFood(this, 'dessert')" data-identifier="food-option">
                     <img src="./img/acai.jpg" alt="">
                     <strong data-identifier="food-title">Açaí</strong>
                     <p>Acompanhamentos ilimitado</p>
@@ -161,7 +161,7 @@
                     </div>
                 </div>
                 <!-- sobremesa -->
-                <div class="item sobrem " onclick="select_dessert(this)" data-identifier="food-option">
+                <div class="item sobrem " onclick="selectFood(this, 'dessert')" data-identifier="food-option">
                     <img src="./img/cupcake_cafe.jpg" alt="">
                     <strong data-identifier="food-title">Cupcake de Café</strong>
                     <p>Com os melhores cafés</p>

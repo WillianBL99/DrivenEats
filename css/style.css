@@ -11,6 +11,12 @@ body {
     color: #333333;
 }
 
+
+/* Ponteiros */
+.cursorEnable{
+    cursor: pointer;
+}
+
 /* topo App */
 
 header {
@@ -69,7 +75,7 @@ section > div {
     overflow-x: scroll;
 }
 
-section .item {
+section>div>div {
     width: 172px;
     height: 216px;
     padding: 14px;
@@ -89,8 +95,6 @@ section>div>div:first-child {
     width: 144px;
     height: 87px;
     border-radius: 4px;
-
-    siz: cover;
 }
 
 .item strong {
@@ -269,7 +273,7 @@ button p {
 }
 
 .selected {
-    padding: 0px;
+    padding: 11px;
     border: 3px solid #32B72F;
 }
 

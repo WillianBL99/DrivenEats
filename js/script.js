@@ -3,12 +3,20 @@ window.onload = function(){
 }
 
 function initialState(){    
-    document.querySelector('footer button').disabled = true;
+    const btn = document.querySelector('footer button');
+    btn.disabled = true;
 }
 
 let food_opt = "";
 let drink_opt = "";
 let dessert_opt = "";
+
+function selectFood(element, classFather){
+    const selectedFood = document.querySelector(`#${classFather} .selected`);
+    if(selectedFood !== null && selectedFood !== element) selectedFood.classList.remove('selected');
+
+    element.classList.toggle('selected');
+}
 
 /* food selection */
 function select_food(food){
