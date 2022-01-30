@@ -54,13 +54,13 @@ function btn_active(){
          
         // nome preço food
         foodName = food.querySelector('strong').innerHTML;
-        foodPrice = food.querySelector('.valor>span').innerHTML;
+        foodPrice = food.querySelector('.valor').innerHTML.replace(/R\$ /, "");
         // nome preço drink        
         drinkName = drink.querySelector('strong').innerHTML;
-        drinkPrice = drink.querySelector('.valor>span').innerHTML;
+        drinkPrice = drink.querySelector('.valor').innerHTML.replace(/R\$ /, "");
         // nome preço dessert 
         dessertName = dessert.querySelector('strong').innerHTML;
-        dessertPrice = dessert.querySelector('.valor>span').innerHTML;
+        dessertPrice = dessert.querySelector('.valor').innerHTML.replace(/R\$ /, "");
         
     } 
     else{
@@ -83,10 +83,11 @@ function popup(){
     confirmOrder.querySelector('div>div:nth-child(4)>p:nth-child(1)').innerHTML = dessertName;
     confirmOrder.querySelector('div>div:nth-child(4)>p:nth-child(2)').innerHTML = dessertPrice;
 
-    const val1 = parseFloat(foodPrice.replace(/,/,"."));
-    const val2 = parseFloat(drinkPrice.replace(/,/,"."));
-    const val3 = parseFloat(dessertPrice.replace(/,/,"."));
+    const val1 = parseFloat(foodPrice);
+    const val2 = parseFloat(drinkPrice);
+    const val3 = parseFloat(dessertPrice);
     
+
     valTot = (val1 + val2 + val3).toFixed(2).replace(/\./, ",");
 
     const total = confirmOrder.querySelector('div>div>strong:nth-child(2)');
@@ -105,8 +106,6 @@ function order_data(){
 
 function sendMensage(){
     // Recebe nome e endreço do usuário
-    const txtHeader = "Por favor preencha as seguintes informações:\n";
-
     const name = document.querySelector('.personData .name').value;
     const address = document.querySelector('.personData .address').value;
 
