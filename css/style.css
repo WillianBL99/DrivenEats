@@ -95,6 +95,8 @@ section>div>div:first-child {
     width: 144px;
     height: 87px;
     border-radius: 4px;
+
+    object-fit: cover;
 }
 
 .item strong {
