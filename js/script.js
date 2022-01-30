@@ -48,9 +48,9 @@ function btn_active(){
 
     // se foi escolhido food e drink e dessert
     if(food != null && drink != null && dessert != null){
-        btn.classList.add('closeOrder');
-        btn.disabled = false;     
-        btn.classList.add('cursorEnable');
+        btn.classList.add('closeOrder','cursorEnable');
+        btn.disabled = false;
+        btn.innerHTML = "Fechar pedido";
          
         // nome preço food
         foodName = food.querySelector('strong').innerHTML;
@@ -64,9 +64,10 @@ function btn_active(){
         
     } 
     else{
-        btn.classList.remove('closeOrder');
+        btn.classList.remove('closeOrder','cursorEnable');
         btn.disabled = true;
-        btn.classList.remove('cursorEnable');   
+        btn.innerHTML = "<p>Selecione os 3 itens</p><p>para fechar o pedido</p>";
+
     } 
 }
 

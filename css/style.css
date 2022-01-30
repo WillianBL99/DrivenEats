@@ -300,5 +300,10 @@ input {
 }
 
 .closeOrder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #fff;
     background-color: #32B72F;
 }
