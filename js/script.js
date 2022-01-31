@@ -54,13 +54,13 @@ function btn_active(){
          
         // nome preço food
         foodName = food.querySelector('strong').innerHTML;
-        foodPrice = food.querySelector('.valor').innerHTML.replace(/R\$ /, "");
+        foodPrice = food.querySelector('.valor').innerHTML.replace(/R\$ /, "").replace(/,/, ".");
         // nome preço drink        
         drinkName = drink.querySelector('strong').innerHTML;
-        drinkPrice = drink.querySelector('.valor').innerHTML.replace(/R\$ /, "");
+        drinkPrice = drink.querySelector('.valor').innerHTML.replace(/R\$ /, "").replace(/,/, ".");
         // nome preço dessert 
         dessertName = dessert.querySelector('strong').innerHTML;
-        dessertPrice = dessert.querySelector('.valor').innerHTML.replace(/R\$ /, "");
+        dessertPrice = dessert.querySelector('.valor').innerHTML.replace(/R\$ /, "").replace(/,/, ".");
         
     } 
     else{
