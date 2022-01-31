@@ -96,18 +96,23 @@ function popup(){
     confirmOrder.classList.toggle('hide');
 }
 
+/* ## Retirado por só poder utilizar prompt ## */
 // alterna entra tela de confirmar pedido e dados pessoais
-function order_data(){
-    document.querySelector('.confirmOrder').classList.toggle('hide');
-    document.querySelector('.personData').classList.toggle('hide');
-}
+//function order_data(){
+//    document.querySelector('.confirmOrder').classList.toggle('hide');    
+//    document.querySelector('.personData').classList.toggle('hide');
+//}
 
 /* Envia mensagem whatsapp */
 
 function sendMensage(){
     // Recebe nome e endreço do usuário
-    const name = document.querySelector('.personData .name').value;
-    const address = document.querySelector('.personData .address').value;
+    const name = prompt("Seu nome");
+    const address = prompt("Seu endereço");
+
+    /* ## Retirado por só poder utilizar prompt ## */
+    //const name = document.querySelector('.personData .name').value;
+    //const address = document.querySelector('.personData .address').value;
 
     // montagem da mensagem
     let text = "Olá, gostaria de fazer o pedido:";
