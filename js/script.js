@@ -75,13 +75,13 @@ function popup(){
     const confirmOrder = document.querySelector('.background');
 
     confirmOrder.querySelector('div>div:nth-child(2)>p:nth-child(1)').innerHTML = foodName;
-    confirmOrder.querySelector('div>div:nth-child(2)>p:nth-child(2)').innerHTML = foodPrice;
+    confirmOrder.querySelector('div>div:nth-child(2)>p:nth-child(2)').innerHTML = foodPrice.replace(/\./, ",");
 
     confirmOrder.querySelector('div>div:nth-child(3)>p:nth-child(1)').innerHTML = drinkName;
-    confirmOrder.querySelector('div>div:nth-child(3)>p:nth-child(2)').innerHTML = drinkPrice;
+    confirmOrder.querySelector('div>div:nth-child(3)>p:nth-child(2)').innerHTML = drinkPrice.replace(/\./, ",");
 
     confirmOrder.querySelector('div>div:nth-child(4)>p:nth-child(1)').innerHTML = dessertName;
-    confirmOrder.querySelector('div>div:nth-child(4)>p:nth-child(2)').innerHTML = dessertPrice;
+    confirmOrder.querySelector('div>div:nth-child(4)>p:nth-child(2)').innerHTML = dessertPrice.replace(/\./, ",");
 
     const val1 = parseFloat(foodPrice);
     const val2 = parseFloat(drinkPrice);
