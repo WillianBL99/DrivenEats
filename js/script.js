@@ -121,9 +121,9 @@ function sendMensage(){
     text += `\n- Prato: ${foodName}`;
     text += `\n- Bebida: ${drinkName}`;
     text += `\n- Sobremesa: ${dessertName}`;
-    text += `\nTotal: ${valTot}`;
+    text += `\nTotal: R$ ${valTot}`;
     text += `\n\nNome: ${name}`;
-    text += `\nEndereço: R$ ${address}`;
+    text += `\nEndereço: ${address}`;
 
     // Converte mensagem para url
     text = window.encodeURIComponent(text);
