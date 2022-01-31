@@ -108,7 +108,9 @@ function popup(){
 function sendMensage(){
     // Recebe nome e endreço do usuário
     const name = prompt("Seu nome");
+    if(name === null) return;
     const address = prompt("Seu endereço");
+    if(address === null) return;
 
     /* ## Retirado por só poder utilizar prompt ## */
     //const name = document.querySelector('.personData .name').value;
@@ -121,7 +123,7 @@ function sendMensage(){
     text += `\n- Sobremesa: ${dessertName}`;
     text += `\nTotal: ${valTot}`;
     text += `\n\nNome: ${name}`;
-    text += `\nEndereço: ${address}`;
+    text += `\nEndereço: R$ ${address}`;
 
     // Converte mensagem para url
     text = window.encodeURIComponent(text);
